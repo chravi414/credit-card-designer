@@ -1,0 +1,81 @@
+.card {
+  /* background-color: #1841a1; */
+  width: 450px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 7px 0px 8px 0px rgb(0 0 0 / 12%);
+  position: relative;
+}
+
+.card-chip {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.bank-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.card-details {
+  position: absolute;
+  color: #fff;
+  left: 20px;
+  bottom: 20px;
+  width: 100%;
+}
+
+.card-details__name {
+  font-size: 28px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.card-details__number {
+  font-size: 18px;
+  top: -100px;
+  position: absolute;
+  width: 100%;
+}
+
+.card-details__expiry {
+  font-size: 18px;
+  top: -100px;
+  right: 50px;
+  position: absolute;
+}
+
+.card.card-back {
+  background: linear-gradient(to bottom, #425ca5 0%, #000099 100%);
+}
+
+.card-sign {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 40px;
+}
+.card-details__cvv {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 100px;
+  right: 40px;
+}
+
+.card-details__info {
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.has-bg-img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

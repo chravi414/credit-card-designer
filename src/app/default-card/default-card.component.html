@@ -1,0 +1,42 @@
+<div class="card has-bg-img" *ngIf="!iSBack" [ngStyle]="styleClass">
+  <div class="card-chip">
+    <img
+      src="https://cdn.iconscout.com/icon/premium/png-256-thumb/credit-card-chip-1522324-1288446.png"
+      width="70px"
+      alt=""
+    />
+  </div>
+  <div class="card-details">
+    <div class="card-details__name">
+      {{ cardData?.cardHolderName ? cardData.cardHolderName : "Test User" }}
+    </div>
+    <div class="card-details__number">
+      {{
+        cardData?.cardNumber
+          ? formatCardNumber(cardData.cardNumber)
+          : "0000 0000 0000 0000"
+      }}
+    </div>
+    <div class="card-details__expiry">
+      {{ cardData?.cardExpiry ? cardData.cardExpiry : "12 / 25" }}
+    </div>
+  </div>
+  <div class="bank-logo">
+    <img
+      src="https://carddesigner.visa.com/Upload/2019/12/12/brand-mark-silver-platinium-20191212080714119.png"
+      width="100px"
+    />
+  </div>
+</div>
+
+<div class="card has-bg-img" *ngIf="iSBack" [ngStyle]="backStyleClass">
+  <div class="card-sign"></div>
+  <div class="card-details__cvv">
+    {{ cardData?.cvv ? cardData.cvv : "111" }}
+  </div>
+  <div class="card-details__info">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nemo eius
+    dolores soluta non beatae omnis, rem minus itaque assumenda sunt maiores hic
+    est placeat.soluta non beatae omnis, rem minus itaque assumenda sunt.
+  </div>
+</div>

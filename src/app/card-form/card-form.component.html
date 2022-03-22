@@ -1,0 +1,141 @@
+<div class="card-form-wrapper">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Card Background">
+      <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Images">
+          <div class="wrapper">
+            <div class="card" *ngFor="let image of IMAGES">
+              <figure
+                class="card__thumbnail"
+                (click)="handleCardDesignSelect('IMAGE', image.id)"
+              >
+                <img [src]="image.url" [alt]="image.value" />
+              </figure>
+            </div>
+            <input
+              type="file"
+              id="upload"
+              hidden
+              (change)="handleFileSelect($event)"
+            />
+            <label for="upload"> Choose File </label>
+          </div>
+        </mat-tab>
+        <mat-tab label="Patterns">
+          <div class="wrapper">
+            <div class="card" *ngFor="let pattern of PATTERNS">
+              <figure
+                class="card__thumbnail"
+                (click)="handleCardDesignSelect('PATTERN', pattern.id)"
+              >
+                <img [src]="pattern.url" [alt]="pattern.value" />
+              </figure>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Colors">
+          <div class="wrapper">
+            <div class="card" *ngFor="let color of COLORS">
+              <div
+                class="card__thumbnail {{ color.value }}"
+                (click)="handleCardDesignSelect('COLOR', color.id)"
+              ></div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-tab>
+    <mat-tab label="Card Details">
+      <form
+        [formGroup]="cardForm"
+        (ngSubmit)="onSubmit(cardForm.value)"
+        class="form"
+      >
+        <mat-form-field class="form-element">
+          <input
+            matInput
+            placeholder="Card holdername"
+            formControlName="cardHolderName"
+          />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['cardHolderName'].valid &&
+              cardForm.controls['cardHolderName'].touched
+            "
+          >
+            Please enter a valid name.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+          <input
+            matInput
+            placeholder="Card Number"
+            formControlName="cardNumber"
+          />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['cardNumber'].valid &&
+              cardForm.controls['cardNumber'].touched
+            "
+          >
+            Please enter a valid number.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <input
+            matInput
+            placeholder="Expiry Month"
+            formControlName="cardExpiryMonth"
+          />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['cardExpiryMonth'].valid &&
+              cardForm.controls['cardExpiryMonth'].touched
+            "
+          >
+            Please enter a valid expriy month.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <input
+            matInput
+            placeholder="Expiry Year"
+            formControlName="cardExpiryYear"
+          />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['cardExpiryYear'].valid &&
+              cardForm.controls['cardExpiryYear'].touched
+            "
+          >
+            Please enter a valid expriy year.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <input matInput placeholder="CVV" formControlName="cvv" />
+          <mat-error
+            *ngIf="
+              !cardForm.controls['cvv'].valid &&
+              cardForm.controls['cvv'].touched
+            "
+          >
+            Please enter a valid expriy.
+          </mat-error>
+        </mat-form-field>
+
+        <div class="form-element">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="button"
+            [disabled]="!cardForm.valid"
+          >
+            Submit Form
+          </button>
+        </div>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+</div>

@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-grid-tile .mat-grid-tile-content {
+  align-items: flex-start;
+}
+
+mat-tab-group .mat-tab-body-wrapper {
+  margin-top: 20px;
+}
+
+.card-form-wrapper {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 85%;
+}

@@ -1,0 +1,100 @@
+.wrapper {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.wrapper > * {
+  margin: 10px 20px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+
+  width: 200px; /* Box dimensions */
+  height: 100px;
+
+  border-radius: 4px; /* Styling */
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.56s ease-in-out; /* Animation */
+  /* background-color: rgba(0,0,0,.2); /* for debugging */
+}
+/* Shows an outer shadow */
+.card:hover {
+  /* Just for styling */
+  cursor: pointer;
+}
+
+/* Cards titles styling
+  ------------------------------------------ */
+.card__title {
+  /* Just for styling */
+  align-self: flex-end;
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+/* Styles for:
+  ** - Using IMG tag inside a container
+  ------------------------------------------ */
+/* The image container */
+.card__thumbnail {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+
+  width: 100%; /* Thumbnail dimensions. */
+  height: 100%; /*** Change the height to make the image smaller ***/
+  /* background-color: rgba(0,0,0,.2);  /* for debugging */
+}
+/* Sets the image dimensions */
+.card__thumbnail > img {
+  /* Tip: use 1:1 ratio images */
+  width: 100%; /* or width when img.width > img.height */
+}
+/* Styles the title inside the img container */
+.card__thumbnail > .card__title {
+  /* Just for styling */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.card__thumbnail.green {
+  background-color: green;
+}
+
+.card__thumbnail.red {
+  background-color: red;
+}
+
+.form {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.form-field {
+  width: 100%;
+}
+
+label {
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  margin-left: 2rem;
+}
